@@ -14,4 +14,18 @@ class Tambola {
         return ticket;
     }
 
+    void displayticket(HashMap ticket) {
+        Iterator ticketkey = ticket.keySet().iterator();
+        int row = 0;
+        while (ticketkey.hasNext()) {
+            if (row % 5 == 0) {
+                System.out.println();
+            }
+            int key = (int) ticketkey.next();
+            System.out.print(" " + key + " = " + ticket.get(key) + "      ");
+            row++;
+        }
+    }
+
+
 }
