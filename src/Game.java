@@ -24,7 +24,14 @@ public class Game extends Thread {
 
 
     public static void main(String[] args) throws InterruptedException {
-       
+        var t1 = new Thread();
+        t1.start();
+        Game game_obj = new Game();
+        Tambola tam_obj = new Tambola();
+        HashSet<Integer> board = new HashSet<Integer>();
+        HashMap player1 = tam_obj.ticketgenerator();
+        t1.sleep(5000);
+
     }
 }
 
