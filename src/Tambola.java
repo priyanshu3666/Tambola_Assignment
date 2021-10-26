@@ -13,6 +13,11 @@ class Tambola {
         }
         return ticket;
     }
+    void displayBoard(HashSet board) {
+        
+        System.out.println(board);
+    }
+
 
     void displayticket(HashMap ticket) {
         Iterator ticketkey = ticket.keySet().iterator();
