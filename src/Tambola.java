@@ -12,14 +12,12 @@ class Tambola {
 
     String checker(HashMap player, HashSet board) {
         Iterator ticketkey = player.keySet().iterator();
-        int row = 0;
 
         while (ticketkey.hasNext()) {
             Object key = ticketkey.next();
-            if (!(board.contains(key) && (player.get(key) == "true"))) {
+            if (!(board.contains(key) && (boolean)(player.get(key)))) {
                 return "Looser";
             }
-            row++;
         }
         return "Winner";
     }
