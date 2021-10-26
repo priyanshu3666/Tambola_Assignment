@@ -1,9 +1,15 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 class Tambola {
+    boolean housie(HashMap player){
+        for ( Object key : player.values() ) {
+            if(!(boolean) key) {
+                return  false;
+            }
+        }
+        return true;
+    }
+
 
     HashMap<Integer,Boolean> ticketgenerator() {
         var ticket = new HashMap<Integer, Boolean>();
