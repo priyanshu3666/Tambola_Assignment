@@ -50,8 +50,8 @@ public class Game extends Thread {
             String str = random_number + "\n";
             try {
                 fileWriter.write(str);
-                System.out.println(random_number);
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 e.printStackTrace();
             }
             board.add(random_number);
@@ -62,7 +62,7 @@ public class Game extends Thread {
             tam_obj.displayBoard(board);
             tam_obj.displayticket(player1);
             System.out.println();
-            sleep(5000);
+            sleep(1);
         }
         fileWriter.close();
 
