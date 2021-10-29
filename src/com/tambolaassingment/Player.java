@@ -4,88 +4,87 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Iterator;
 
-class Player extends Thread {
-    public boolean housiestatus = false;
+class Player implements Runnable {
+    public static  boolean housieStatus = false;
+    private boolean  printedOnce = true;
+    private  int totalCountNumbersPlayer0 = 0;
+    private  int totalCountNumbersPlayer1 = 0;
+    private final int playerId;
     private final String name;
-    private final HashMap ticket;
+    private final HashMap<Integer,Boolean> ticket;
+    final String filepath = "C:\\Users\\Priyanshu Shukla\\IdeaProjects\\Tambola_Assignment\\src\\RanNoStore.txt";
 
-    public Player(String name) {
+    public Player(String name,int playerId) {
         this.name = name;
-        ticket = new HashMap<Integer, Boolean>();
+        this.playerId=playerId;
+        ticket = new HashMap<>();
         int min = 1, max = 90;
         while (ticket.size() != 15) {
             ticket.put((int) (Math.random() * (max - min + 1) + min), false);
         }
+
     }
 
-    public HashMap getTicket() {
-        return ticket;
-    }
-
-    public String getPlayerName() {
-        return name;
-    }
-
-    public boolean getHousieStatus() {
-        return housiestatus;
-    }
-
-    void displayticket(HashMap ticket) {
-        Iterator ticketkey = ticket.keySet().iterator();
+    void displayticket(HashMap<Integer,Boolean> ticket) {
+        Iterator<Integer> ticketkey = ticket.keySet().iterator();
         int row = 0;
         while (ticketkey.hasNext()) {
             if (row % 5 == 0) {
                 System.out.println();
             }
             row++;
-            int key = (int) ticketkey.next();
+            int key =  ticketkey.next();
             System.out.print(" " + key + " = " + ticket.get(key) + "      ");
         }
     }
 
 
-    boolean housie(HashMap ticket) {
-        for (Object key : ticket.values()) {
-            if (!(boolean) key) {
-                return false;
-            }
+    void marker() throws IOException {
 
-        }
-        System.out.println("\nHey, its housie. Ask Checker to check\n ");
-        return true;
-    }
 
-    void generatedNumberReader() throws IOException {
-        String filepath = "C:\\Users\\Priyanshu Shukla\\IdeaProjects\\Tambola_Assignment\\src\\RanNoStore.txt";
-        String generatred_number = "";
-        try {
-            File file = new File(filepath);
-            InputStreamReader streamReader = new InputStreamReader(new FileInputStream(file));
-            BufferedReader br = new BufferedReader(streamReader);
-            while (br.ready()) {
-                generatred_number = br.readLine();
-            }
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-        var hit = ticket.replace(Integer.parseInt(generatred_number), true);
+        var hit = ticket.replace(GameExecutor.randomNumberGenerated, true);
         if (hit != null) {
-            System.out.println("\n" + name + " got a match in ticket : " + generatred_number);
+            printedOnce = !printedOnce;
+            if(playerId==1)
+            totalCountNumbersPlayer1++;
+            else{
+                totalCountNumbersPlayer0++;
+            }
+            System.out.println("\n" + name + " got a match in ticket : " + GameExecutor.randomNumberGenerated);
             displayticket(ticket);
         }
     }
 
     public void run() {
-        try {
-            generatedNumberReader();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        housiestatus = housie(ticket);
-        if (housiestatus) {
-            Checker.checker(ticket, TambolaBoard.tambolaboard, name);
+
+        while(totalCountNumbersPlayer1 !=15 || totalCountNumbersPlayer0 != 15) {
+            try {
+                Thread.currentThread().join(2500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            try {
+                marker();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (totalCountNumbersPlayer0 == 15 ||totalCountNumbersPlayer1 ==15) {
+                System.out.println("\nHey, its housie ,Please ask checker to check\n ");
+                housieStatus = true;
+            }
+            if (housieStatus) {
+                try {
+                    FileWriter fileWriter = new FileWriter(filepath, true);
+                    fileWriter.write(RandomNumberGenerator.generatedNumbers.toString());
+                    fileWriter.close();
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+                Checker.checker(ticket, TambolaBoard.tambolaBoard, name);
+            }
+
         }
     }
-
-
 }
