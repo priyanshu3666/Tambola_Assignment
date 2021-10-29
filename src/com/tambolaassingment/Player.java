@@ -1,88 +1,76 @@
 package com.tambolaassingment;
 
-import java.io.*;
 import java.util.HashMap;
 import java.util.Iterator;
 
 class Player implements Runnable {
+    private TicketChecker ticketChecker;
     public static  boolean housieStatus = false;
-    private boolean  printedOnce = true;
-    private  int totalCountNumbersPlayer0 = 0;
-    private  int totalCountNumbersPlayer1 = 0;
-    private final int playerId;
     private final String name;
-    private final HashMap<Integer,Boolean> ticket;
-    final String filepath = "C:\\Users\\Priyanshu Shukla\\IdeaProjects\\Tambola_Assignment\\src\\RanNoStore.txt";
+    private  HashMap<Integer,Boolean> ticket;
 
-    public Player(String name,int playerId) {
+    public Player(String name, TicketChecker ticketChecker) {
         this.name = name;
-        this.playerId=playerId;
+        this.ticketChecker =ticketChecker;
+
         ticket = new HashMap<>();
-        int min = 1, max = 90;
+        int min = 1;
+        int max = 90;
         while (ticket.size() != 15) {
             ticket.put((int) (Math.random() * (max - min + 1) + min), false);
         }
 
     }
+    public  HashMap<Integer,Boolean> getTicket(){
+        return  ticket;
+    }
+    boolean housie(HashMap<Integer,Boolean> ticket){
+            for ( Boolean key : ticket.values() ) {
+                if(!(boolean) key) {
+                    return  false;}
+            }
+            return true;
+    }
 
     void displayticket(HashMap<Integer,Boolean> ticket) {
-        Iterator<Integer> ticketkey = ticket.keySet().iterator();
+        Iterator<Integer> ticketKey = ticket.keySet().iterator();
         int row = 0;
-        while (ticketkey.hasNext()) {
+        while (ticketKey.hasNext()) {
             if (row % 5 == 0) {
                 System.out.println();
             }
             row++;
-            int key =  ticketkey.next();
+            int key =  ticketKey.next();
             System.out.print(" " + key + " = " + ticket.get(key) + "      ");
         }
     }
 
 
-    void marker() throws IOException {
+    void marker() {
 
-
-        var hit = ticket.replace(GameExecutor.randomNumberGenerated, true);
-        if (hit != null) {
-            printedOnce = !printedOnce;
-            if(playerId==1)
-            totalCountNumbersPlayer1++;
-            else{
-                totalCountNumbersPlayer0++;
+            var hit = ticket.replace(GameExecutor.randomNumberGenerated, true);
+            if (hit != null) {
+                System.out.println("\n" + name + " got a match in ticket : " + GameExecutor.randomNumberGenerated);
+                displayticket(ticket);
             }
-            System.out.println("\n" + name + " got a match in ticket : " + GameExecutor.randomNumberGenerated);
-            displayticket(ticket);
-        }
+
+
     }
 
     public void run() {
 
-        while(totalCountNumbersPlayer1 !=15 || totalCountNumbersPlayer0 != 15) {
+        while(!housieStatus) {
+            marker();
+            housieStatus = housie(ticket);
+
+            if (housieStatus) {
+                System.out.println("\nHey, its housie ,Please ask checker to check\n ");
+                ticketChecker.tickerChecker(ticket, TambolaBoard.board, name);
+            }
             try {
-                Thread.currentThread().join(2500);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
-            try {
-                marker();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            if (totalCountNumbersPlayer0 == 15 ||totalCountNumbersPlayer1 ==15) {
-                System.out.println("\nHey, its housie ,Please ask checker to check\n ");
-                housieStatus = true;
-            }
-            if (housieStatus) {
-                try {
-                    FileWriter fileWriter = new FileWriter(filepath, true);
-                    fileWriter.write(RandomNumberGenerator.generatedNumbers.toString());
-                    fileWriter.close();
-                } catch (IOException e) {
-                    System.out.println(e.getMessage());
-                }
-                Checker.checker(ticket, TambolaBoard.tambolaBoard, name);
             }
 
         }
