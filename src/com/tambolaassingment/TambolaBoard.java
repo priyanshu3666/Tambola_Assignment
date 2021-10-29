@@ -3,15 +3,15 @@ package com.tambolaassingment;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class TambolaBoard  {
-    static HashMap<Integer, Boolean> tambolaBoard = new HashMap<>();
+
+public class TambolaBoard {
+    static HashMap<Integer, Boolean> board = new HashMap<>();
 
     public TambolaBoard() {
         for (int num = 1; num < 91; num++) {
-            tambolaBoard.put(num, false);
+            board.put(num, false);
         }
     }
-
 
     public void displayBoard(HashMap<Integer, Boolean> board) {
         Iterator<Integer> boardKey = board.keySet().iterator();
