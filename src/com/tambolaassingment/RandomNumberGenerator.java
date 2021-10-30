@@ -19,7 +19,6 @@ public class RandomNumberGenerator {
             }
         }
 
-        TambolaBoard.board.replace(randomNumber, true);
         generatedNumbers.add(randomNumber);
         System.out.println("\nGenerated number is :" + randomNumber);
         return randomNumber;
