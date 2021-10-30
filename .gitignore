@@ -1,7 +1,6 @@
 # Project exclude paths
 */out/
 <<<<<<<<< Temporary merge branch 1
-*/.idea/
-=========
-*.idea
+
+
 >>>>>>>>> Temporary merge branch 2
