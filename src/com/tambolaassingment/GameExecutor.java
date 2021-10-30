@@ -1,7 +1,5 @@
 package com.tambolaassingment;
 
-
-
 public class GameExecutor implements  Runnable{
     static int randomNumberGenerated=0;
 
@@ -10,8 +8,9 @@ public class GameExecutor implements  Runnable{
 
         while(!Player.housieStatus) {
             randomNumberGenerated = RandomNumberGenerator.numberGenerator();
+            TambolaBoard.board.replace(randomNumberGenerated,true);
             try {
-                Thread.sleep(498);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -31,5 +30,6 @@ public class GameExecutor implements  Runnable{
         gameExecutorThread.start();
         player1thread.start();
         player2thread.start();
-        }}
+        }
+}
 
