@@ -10,6 +10,7 @@ class Player implements Runnable {
     private HashMap<Integer, Boolean> ticket;
 
     public Player(String name, TicketChecker ticketChecker) {
+        System.out.println("***************************************************************************");
         this.name = name;
         this.ticketChecker = ticketChecker;
 
