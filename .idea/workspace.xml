@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0438d950-4736-403f-a5bd-34de3fc8b6a4" name="Changes" comment="gitignore updated" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/Develop" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/com/tambolaassingment/Player.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="2097cTfnXNYGMFlHTXwXYHRuSn7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="GameExecutor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tambolaassingment.GameExecutor" />
+      <module name="Tambola_Assignment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tambolaassingment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GameExecutor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0438d950-4736-403f-a5bd-34de3fc8b6a4" name="Changes" comment="" />
+      <created>1635445031136</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635445031136</updated>
+    </task>
+    <task id="LOCAL-00001" summary="updated code">
+      <created>1635480995798</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635480995798</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updated with varibles  name">
+      <created>1635532502780</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635532502780</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update the code and remove file system operations">
+      <created>1635533891501</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635533891501</updated>
+    </task>
+    <task id="LOCAL-00004" summary="variable renamed">
+      <created>1635534144423</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635534144423</updated>
+    </task>
+    <task id="LOCAL-00005" summary="variable renamed and code refactored">
+      <created>1635534883015</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1635534883015</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Modify constructor for taking  Checker obj,totalCount Variable removed ,adding threads ,refactoring code">
+      <created>1635535731722</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635535731722</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactored code">
+      <created>1635576504343</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635576504343</updated>
+    </task>
+    <task id="LOCAL-00008" summary="housie method replaced with counter">
+      <created>1635576805946</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635576805946</updated>
+    </task>
+    <task id="LOCAL-00009" summary="removed the statement for replacing the generated number board value">
+      <created>1635576899867</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1635576899867</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updated branch">
+      <created>1635577584773</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1635577584773</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactored code">
+      <created>1635577777344</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635577777344</updated>
+    </task>
+    <task id="LOCAL-00012" summary="gitignore updated">
+      <created>1635586078117</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1635586078117</updated>
+    </task>
+    <task id="LOCAL-00013" summary="gitignore updated">
+      <created>1635586490464</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1635586490464</updated>
+    </task>
+    <task id="LOCAL-00014" summary="gitignore updated">
+      <created>1635586816269</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1635586816269</updated>
+    </task>
+    <task id="LOCAL-00015" summary="gitignore updated">
+      <created>1635587296652</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1635587296652</updated>
+    </task>
+    <task id="LOCAL-00016" summary="gitignore updated">
+      <created>1635587374213</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1635587374213</updated>
+    </task>
+    <task id="LOCAL-00017" summary="gitignore updated">
+      <created>1635587448570</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1635587448570</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="updated code" />
+    <MESSAGE value="updated with varibles  name" />
+    <MESSAGE value="update the code and remove file system operations" />
+    <MESSAGE value="variable renamed" />
+    <MESSAGE value="variable renamed and code refactored" />
+    <MESSAGE value="Modify constructor for taking  Checker obj,totalCount Variable removed ,adding threads ,refactoring code" />
+    <MESSAGE value="housie method replaced with counter" />
+    <MESSAGE value="removed the statement for replacing the generated number board value" />
+    <MESSAGE value="updated branch" />
+    <MESSAGE value="refactored code" />
+    <MESSAGE value="gitignore updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore updated" />
+  </component>
+</project>
