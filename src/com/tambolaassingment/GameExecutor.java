@@ -1,14 +1,27 @@
 package com.tambolaassingment;
 
 
+public class GameExecutor implements Runnable {
+    static int randomNumberGenerated = 0;
 
-public class GameExecutor implements  Runnable{
-    static int randomNumberGenerated=0;
+    public static void main(String[] args) {
+        System.out.println("Let's Begin the Tambola game \n");
+        new TambolaBoard();
+        GameExecutor gameExecutor = new GameExecutor();
+        Thread gameExecutorThread = new Thread(gameExecutor);
+        Player player1 = new Player("Priyanshu", new TicketChecker());
+        Player player2 = new Player("Yansh", new TicketChecker());
+        Thread player1thread = new Thread(player1);
+        Thread player2thread = new Thread(player2);
+        gameExecutorThread.start();
+        player1thread.start();
+        player2thread.start();
+    }
 
     @Override
     public void run() {
 
-        while(!Player.housieStatus) {
+        while (!Player.housieStatus) {
             randomNumberGenerated = RandomNumberGenerator.numberGenerator();
             try {
                 Thread.sleep(498);
@@ -17,19 +30,5 @@ public class GameExecutor implements  Runnable{
             }
         }
     }
-
-
-    public static void main(String[] args)  {
-        System.out.println("Let's Begin the Tambola game \n");
-        new TambolaBoard();
-        GameExecutor gameExecutor = new GameExecutor();
-        Thread gameExecutorThread = new Thread(gameExecutor);
-        Player player1 = new Player("Priyanshu",new TicketChecker());
-        Player player2 = new Player("Yansh",new TicketChecker());
-        Thread player1thread = new Thread(player1);
-        Thread player2thread = new Thread(player2);
-        gameExecutorThread.start();
-        player1thread.start();
-        player2thread.start();
-        }}
+}
 

@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 class Player implements Runnable {
-    private TicketChecker ticketChecker;
-    public static  boolean housieStatus = false;
+    public static boolean housieStatus = false;
     private final String name;
-    private  HashMap<Integer,Boolean> ticket;
+    private TicketChecker ticketChecker;
+    private HashMap<Integer, Boolean> ticket;
 
     public Player(String name, TicketChecker ticketChecker) {
         this.name = name;
-        this.ticketChecker =ticketChecker;
+        this.ticketChecker = ticketChecker;
 
         ticket = new HashMap<>();
         int min = 1;
@@ -21,18 +21,21 @@ class Player implements Runnable {
         }
 
     }
-    public  HashMap<Integer,Boolean> getTicket(){
-        return  ticket;
-    }
-    boolean housie(HashMap<Integer,Boolean> ticket){
-            for ( Boolean key : ticket.values() ) {
-                if(!(boolean) key) {
-                    return  false;}
-            }
-            return true;
+
+    public HashMap<Integer, Boolean> getTicket() {
+        return ticket;
     }
 
-    void displayticket(HashMap<Integer,Boolean> ticket) {
+    boolean housie(HashMap<Integer, Boolean> ticket) {
+        for (Boolean key : ticket.values()) {
+            if (!(boolean) key) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    void displayticket(HashMap<Integer, Boolean> ticket) {
         Iterator<Integer> ticketKey = ticket.keySet().iterator();
         int row = 0;
         while (ticketKey.hasNext()) {
@@ -40,7 +43,7 @@ class Player implements Runnable {
                 System.out.println();
             }
             row++;
-            int key =  ticketKey.next();
+            int key = ticketKey.next();
             System.out.print(" " + key + " = " + ticket.get(key) + "      ");
         }
     }
@@ -48,18 +51,18 @@ class Player implements Runnable {
 
     void marker() {
 
-            var hit = ticket.replace(GameExecutor.randomNumberGenerated, true);
-            if (hit != null) {
-                System.out.println("\n" + name + " got a match in ticket : " + GameExecutor.randomNumberGenerated);
-                displayticket(ticket);
-            }
+        var hit = ticket.replace(GameExecutor.randomNumberGenerated, true);
+        if (hit != null) {
+            System.out.println("\n" + name + " got a match in ticket : " + GameExecutor.randomNumberGenerated);
+            displayticket(ticket);
+        }
 
 
     }
 
     public void run() {
 
-        while(!housieStatus) {
+        while (!housieStatus) {
             marker();
             housieStatus = housie(ticket);
 

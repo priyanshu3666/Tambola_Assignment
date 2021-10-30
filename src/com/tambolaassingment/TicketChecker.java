@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class TicketChecker {
     void tickerChecker(HashMap<Integer, Boolean> ticket, HashMap<Integer, Boolean> board, String playerName) {
-        System.out.println("Wait tickerChecker is Checking........ ... .... .. ");
+        System.out.println("Wait tickerChecker is Checking........ ... .... ... ");
         Iterator<Integer> ticketkey = ticket.keySet().iterator();
         while (ticketkey.hasNext()) {
             Object key = ticketkey.next();

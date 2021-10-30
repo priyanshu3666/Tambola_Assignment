@@ -15,12 +15,12 @@ public class TambolaBoard {
 
     public void displayBoard(HashMap<Integer, Boolean> board) {
         Iterator<Integer> boardKey = board.keySet().iterator();
-        int row = 0;
+        int counter = 0;
         while (boardKey.hasNext()) {
-            if (row % 10 == 0) {
+            if (counter % 10 == 0) {
                 System.out.println();
             }
-            row++;
+            counter++;
             var key = boardKey.next();
             if (key < 10) {
                 System.out.print("  " + key + " = " + board.get(key) + "      ");

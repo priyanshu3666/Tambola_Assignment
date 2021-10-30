@@ -6,6 +6,7 @@ import java.util.HashSet;
 public class RandomNumberGenerator {
     static int[] arr = new int[91];
     static HashSet<Integer> generatedNumbers = new HashSet<>();
+
     private RandomNumberGenerator() {
     }
 
