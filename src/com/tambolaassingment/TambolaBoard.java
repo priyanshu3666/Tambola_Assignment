@@ -2,10 +2,11 @@ package com.tambolaassingment;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 
 public class TambolaBoard {
-    static HashMap<Integer, Boolean> board = new HashMap<>();
+    static Map<Integer, Boolean> board = new HashMap<>();
 
     public TambolaBoard() {
         for (int num = 1; num < 91; num++) {
@@ -13,7 +14,7 @@ public class TambolaBoard {
         }
     }
 
-    public void displayBoard(HashMap<Integer, Boolean> board) {
+    public void displayBoard(Map<Integer, Boolean> board) {
         Iterator<Integer> boardKey = board.keySet().iterator();
         int counter = 0;
         while (boardKey.hasNext()) {
