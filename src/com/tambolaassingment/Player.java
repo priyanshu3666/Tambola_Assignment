@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 class Player implements Runnable {
+    private int hitCounter;
     public static boolean housieStatus = false;
     private final String name;
     private TicketChecker ticketChecker;
@@ -26,14 +27,6 @@ class Player implements Runnable {
         return ticket;
     }
 
-    boolean housie(HashMap<Integer, Boolean> ticket) {
-        for (Boolean key : ticket.values()) {
-            if (!(boolean) key) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     void displayticket(HashMap<Integer, Boolean> ticket) {
         Iterator<Integer> ticketKey = ticket.keySet().iterator();
@@ -50,22 +43,27 @@ class Player implements Runnable {
 
 
     void marker() {
+        if (ticket.get(GameExecutor.randomNumberGenerated) == null||!ticket.get(GameExecutor.randomNumberGenerated)){
 
-        var hit = ticket.replace(GameExecutor.randomNumberGenerated, true);
-        if (hit != null) {
-            System.out.println("\n" + name + " got a match in ticket : " + GameExecutor.randomNumberGenerated);
-            displayticket(ticket);
+            Object hit = ticket.replace(GameExecutor.randomNumberGenerated, true);
+            if (hit != null) {
+                hitCounter++;
+                if(hitCounter == 15) {
+                    housieStatus =true;
+                }
+                System.out.println("\n" + name + " got a match in ticket : " + GameExecutor.randomNumberGenerated);
+                displayticket(ticket);
+            }
         }
-
 
     }
 
     public void run() {
 
         while (!housieStatus) {
-            marker();
-            housieStatus = housie(ticket);
 
+            marker();
+            
             if (housieStatus) {
                 System.out.println("\nHey, its housie ,Please ask checker to check\n ");
                 ticketChecker.tickerChecker(ticket, TambolaBoard.board, name);
