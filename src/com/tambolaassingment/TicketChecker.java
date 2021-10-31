@@ -2,9 +2,10 @@ package com.tambolaassingment;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class TicketChecker {
-    void tickerChecker(HashMap<Integer, Boolean> ticket, HashMap<Integer, Boolean> board, String playerName) {
+    void tickerChecker(Map<Integer, Boolean> ticket, Map<Integer, Boolean> board, String playerName) {
         System.out.println("Wait tickerChecker is Checking........ ... .... ... ");
         Iterator<Integer> ticketkey = ticket.keySet().iterator();
         while (ticketkey.hasNext()) {
