@@ -1,7 +1,6 @@
 package com.tambolaassingment;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 
@@ -15,19 +14,18 @@ public class TambolaBoard {
     }
 
     public void displayBoard(Map<Integer, Boolean> board) {
-        Iterator<Integer> boardKey = board.keySet().iterator();
         int counter = 0;
-        while (boardKey.hasNext()) {
-            if (counter % 10 == 0) {
+        for (Map.Entry<Integer,Boolean> pair: board.entrySet()) {
+            if ( counter % 10 == 0) {
                 System.out.println();
             }
-            counter++;
-            var key = boardKey.next();
-            if (key < 10) {
-                System.out.print("  " + key + " = " + board.get(key) + "      ");
-            } else {
-                System.out.print(" " + key + " = " + board.get(key) + "      ");
+            if  (pair.getKey()<10){
+                System.out.format("  %d = %b   ", pair.getKey(), pair.getValue());
             }
+            else {
+                System.out.format(" %d = %b   ", pair.getKey(), pair.getValue());
+            }
+            counter++;
         }
     }
 
