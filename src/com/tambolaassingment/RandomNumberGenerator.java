@@ -3,8 +3,7 @@ package com.tambolaassingment;
 public class RandomNumberGenerator {
     static int[] arr = new int[91];
 
-    private RandomNumberGenerator() {
-    }
+
 
     public static int numberGenerator() {
         int randomNumber;
