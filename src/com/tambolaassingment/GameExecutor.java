@@ -6,8 +6,9 @@ public class GameExecutor implements Runnable {
 
     public static void main(String[] args) {
         System.out.println("Let's Begin the Tambola game \n");
-        new TambolaBoard();
+        new TambolaBoard().displayBoard(TambolaBoard.board);
         GameExecutor gameExecutor = new GameExecutor();
+        System.out.println();
         Thread gameExecutorThread = new Thread(gameExecutor);
         Player player1 = new Player("Priyanshu", new TicketChecker());
         Player player2 = new Player("Yansh", new TicketChecker());
