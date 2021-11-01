@@ -23,9 +23,6 @@ class Player implements Runnable {
 
     }
 
-    public Map<Integer, Boolean> getTicket() {
-        return ticket;
-    }
 
 
     void displayticket(Map<Integer, Boolean> ticket) {
