@@ -1,15 +1,14 @@
 package com.tambolaassingment;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 class Player implements Runnable {
-    private int hitCounter;
-    public static boolean housieStatus = false;
     private final String name;
+    private int hitCounter;
     private TicketChecker ticketChecker;
     private Map<Integer, Boolean> ticket;
+    public static boolean housieStatus = false;
 
     public Player(String name, TicketChecker ticketChecker) {
         this.name = name;
@@ -30,16 +29,16 @@ class Player implements Runnable {
 
 
     void displayticket(Map<Integer, Boolean> ticket) {
-        Iterator<Integer> ticketKey = ticket.keySet().iterator();
-        int row = 0;
-        while (ticketKey.hasNext()) {
-            if (row % 5 == 0) {
+        int counter = 0;
+        for (Map.Entry<Integer,Boolean> pair: ticket.entrySet()) {
+            if ( counter % 5 == 0) {
                 System.out.println();
             }
-            row++;
-            int key = ticketKey.next();
-            System.out.print(" " + key + " = " + ticket.get(key) + "      ");
+            System.out.format(" %d = %b   ", pair.getKey(), pair.getValue());
+
+            counter++;
         }
+
     }
 
 
